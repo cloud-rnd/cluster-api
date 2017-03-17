@@ -1,0 +1,20 @@
+server:
+  port: 9099
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_SERVICE_DOMAIN:localhost}:8761/eureka/
+
+spring:
+  application:
+    name: cluster-routing
+
+
+logging:
+  level:
+    org.chiwooplatform.cloud.sample.proxy: DEBUG
+    org.chiwooplatform.cloud.sample: DEBUG
