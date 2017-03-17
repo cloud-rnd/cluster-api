@@ -1,7 +1,7 @@
-package org.chiwooplatform.cloud.sample.controller;
+package org.chiwooplatform.cloud.sample.proxy;
 
+import org.chiwooplatform.cloud.sample.client.ProductClient;
 import org.chiwooplatform.cloud.sample.message.MessageWrapper;
-import org.chiwooplatform.cloud.sample.proxy.ProductClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

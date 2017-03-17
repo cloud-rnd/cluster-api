@@ -1,4 +1,4 @@
-package org.chiwooplatform.cloud.sample.proxy;
+package org.chiwooplatform.cloud.sample.client;
 
 import org.springframework.stereotype.Component;
 
