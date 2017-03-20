@@ -14,24 +14,26 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 @EnableFeignClients
 @SpringBootApplication
-public class ClusterServiceApplication {
+public class ClusterServiceApplication
+{
+    public static void main( String[] args )
+    {
+        SpringApplication.run( ClusterServiceApplication.class, args );
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(ClusterServiceApplication.class, args);
-	}
-
-	@Configuration
-	public class Config {
-
-		/**
-		 * supporting Client side load balancer and service discovery with Ribbon + RestTemplate
-		 * @return
-		 */
-		@LoadBalanced
-		@Bean
-		public RestTemplate restTemplate() {
-			return new RestTemplate();
-		}
-
-	}
+    @Configuration
+    public class Config
+    {
+        /**
+         * supporting Client side load balancer and service discovery with Ribbon + RestTemplate
+         * 
+         * @return
+         */
+        @LoadBalanced
+        @Bean
+        public RestTemplate restTemplate()
+        {
+            return new RestTemplate();
+        }
+    }
 }

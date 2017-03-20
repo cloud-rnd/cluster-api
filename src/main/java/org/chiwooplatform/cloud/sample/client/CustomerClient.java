@@ -21,15 +21,13 @@ import org.springframework.web.client.RestTemplate;
                 "server called using eureka withrest template");
     }
 </code>
- * 
  * </pre>
  * 
  * @author seonbo.shim
- * 
  */
 @Component
-public class CustomerClient {
-
+public class CustomerClient
+{
     @Autowired
     private RestTemplate restTemplate;
 
@@ -38,11 +36,10 @@ public class CustomerClient {
      * 
      * @return
      */
-    public MessageWrapper<String> greeting() {
-        String result = restTemplate.exchange("http://customer-service/greeting",
-                HttpMethod.GET, null, String.class).getBody();
-        return new MessageWrapper<>(result,
-                "server called using eureka with RestTemplate(ribbon)");
+    public MessageWrapper<String> greeting()
+    {
+        String result = restTemplate.exchange( "http://customer-service/greeting", HttpMethod.GET, null, String.class )
+                                    .getBody();
+        return new MessageWrapper<>( result, "server called using eureka with RestTemplate(ribbon)" );
     }
-
 }

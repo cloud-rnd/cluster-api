@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ProductProxyController {
-    private static Logger logger = LoggerFactory.getLogger(ProductProxyController.class);
+public class ProductProxyController
+{
+    private static Logger logger = LoggerFactory.getLogger( ProductProxyController.class );
 
     @Autowired
     private ProductClient productClient;
 
     @RequestMapping(value = "/proxy/product/greeting", method = RequestMethod.GET)
-    public MessageWrapper<String> greeting() {
-        logger.debug("Reading customer using feign client.");
+    public MessageWrapper<String> greeting()
+    {
+        logger.debug( "Reading customer using feign client." );
         String result = productClient.greeting();
-        return new MessageWrapper<>(result, "server called using eureka with feign");
-
+        return new MessageWrapper<>( result, "server called using eureka with feign" );
     }
-
 }

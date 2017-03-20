@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CustomerProxyController {
-
-    private static Logger logger = LoggerFactory.getLogger(CustomerProxyController.class);
+public class CustomerProxyController
+{
+    private static Logger logger = LoggerFactory.getLogger( CustomerProxyController.class );
 
     @Autowired
     private CustomerClient customerClient;
 
     @RequestMapping(value = "/proxy/customer/greeting", method = RequestMethod.GET)
-    public MessageWrapper<String> greeting() {
-        logger.debug("Reading customer using rest template ");
+    public MessageWrapper<String> greeting()
+    {
+        logger.debug( "Reading customer using rest template " );
         return customerClient.greeting();
-
     }
 }
