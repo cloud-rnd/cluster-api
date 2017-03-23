@@ -1,5 +1,5 @@
 server:
-  port: 9099
+  port: 8501
 
 eureka:
   instance:
@@ -7,12 +7,7 @@ eureka:
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://${DISCOVERY_SERVICE_DOMAIN:localhost}:8761/eureka/
-
-spring:
-  application:
-    name: cluster-api
-
+      defaultZone: http://${DISCOVERY_HOSTNAME:localhost}:8761/eureka/
 
 logging:
   level:

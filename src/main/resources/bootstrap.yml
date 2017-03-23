@@ -1,0 +1,9 @@
+
+spring:
+  application:
+    name: cluster-api
+  cloud:
+    config:
+      uri: http://cloud.configserver:8888/
+      name: cluster-api
+      enabled: true
