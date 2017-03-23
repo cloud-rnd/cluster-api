@@ -11,5 +11,11 @@ eureka:
 
 logging:
   level:
-    org.chiwooplatform.cloud.sample.proxy: DEBUG
+    ROOT: INFO
+    org.springframework: INFO
     org.chiwooplatform.cloud.sample: DEBUG
+  file: logs/cluster-api.log
+  path: ./logs/
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
